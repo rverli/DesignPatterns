@@ -6,13 +6,13 @@ public class ObjTrainer {
 		
 		int qtdNeeded = 5 * numberOfInstances;
 		
-		ObjStorageSingleton singleton = ObjStorageSingleton.getInstance();
+		Singleton singleton = Singleton.getInstance();
 		
-		if ( singleton.getObjQuantity() > qtdNeeded ) {
-			singleton.addObj( qtdNeeded + 10 );
+		if ( singleton.getInstanceQuantity() > qtdNeeded ) {
+			singleton.addInstance( qtdNeeded + 10 );
 		}
 		
-		boolean use = singleton.removeObj( qtdNeeded );
+		boolean use = singleton.removeInstance( qtdNeeded );
 		
 		if (use) {
 			System.out.println("Instances have been used");

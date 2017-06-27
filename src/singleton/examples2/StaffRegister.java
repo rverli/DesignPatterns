@@ -2,10 +2,10 @@ package singleton.examples2;
 
 public class StaffRegister {
 
-	private static final StaffRegister instance;
+	private static final StaffRegister uniqueInstance;
 	
 	static {
-		instance = new StaffRegister();
+		uniqueInstance = new StaffRegister();
 		
 		//Perform additional steps
 	}
@@ -14,7 +14,7 @@ public class StaffRegister {
 	}
 
 	public static StaffRegister getInstance() {
-		return instance;
+		return uniqueInstance;
 	}
 	
 	//Data access methods

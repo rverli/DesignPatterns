@@ -6,7 +6,8 @@ Propósito:
 - Usa uma camada extra indireta para suportar controle, distribuição e acesso inteligente;
 - Protege o componente real de complexidade excessiva;
 
-- Instância o objecto real na primeira vez que o cliente realiza o request ao proxy, guarda a identidade do real objeto, com isso, os subsequentes requests são simplesmente repassados diretamente para o objeto encapsulado.
+- Instância o objecto real na primeira vez que o cliente realiza o request ao proxy, guarda a identidade do real objeto, com isso, 
+os subsequentes requests são simplesmente repassados diretamente para o objeto encapsulado.
 
 =============================================================================================================================================================================================
 
@@ -23,7 +24,8 @@ You need to support resource-hungry objects, and you do not want to instantiate 
 
 Discussion
 
-Design a surrogate, or proxy, object that: instantiates the real object the first time the client makes a request of the proxy, remembers the identity of this real object, and forwards the instigating request to this real object. Then all subsequent requests are simply forwarded directly to the encapsulated real object.
+Design a surrogate, or proxy, object that: instantiates the real object the first time the client makes a request of the proxy, remembers the identity of this real object, 
+and forwards the instigating request to this real object. Then all subsequent requests are simply forwarded directly to the encapsulated real object.
 
 There are four common situations in which the Proxy pattern is applicable.
 

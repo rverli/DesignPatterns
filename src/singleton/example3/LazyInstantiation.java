@@ -1,18 +1,24 @@
 package singleton.example3;
 
+import singleton.examples.Singleton;
+
 public class LazyInstantiation {
 
-	private static LazyInstantiation uniqueInstance;
+	private volatile static LazyInstantiation uniqueInstance;
 	
-	public LazyInstantiation() {
-	}
+	private LazyInstantiation() {}
 
 	public static LazyInstantiation getInstance() {
 		
 		if (uniqueInstance == null) {
-			uniqueInstance = new LazyInstantiation(); //NOT THREAD-SAFE
+			
+			synchronized (Singleton.class) {
+				
+				if (uniqueInstance == null) {
+					uniqueInstance = new LazyInstantiation();
+				}
+			}
 		}
-		
 		return uniqueInstance;
 	}
 	

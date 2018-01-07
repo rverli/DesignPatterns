@@ -26,6 +26,35 @@ public class BuilderTest {
 									.setSpecies("flamingo")
 									.setFavoriteFoods(Arrays.asList("algae", "insects"))
 									.build();
+		
+		//########################################
+		
+		 // This is the Car type that I can order at the car reseller
+	    final Car toyota = 
+	    		new Car.Builder("Toyota", "Avensis")
+	    		.withPower(108)
+	    		.withTorque(180)
+	    		.withGears(6)
+	    		.build();
+
+	    // I want a Black Car!
+	    final Car myNewCar = 
+	    		toyota
+	    		.toBuilder()
+	    		.withColor("Black")
+	    		.build();
+	    
+	   //########################################
+	    
+	    Waiter waiter = new Waiter();
+        PizzaBuilder hawaiianPizzabuilder = new HawaiianPizzaBuilder();
+        PizzaBuilder spicyPizzaBuilder = new SpicyPizzaBuilder();
+
+        waiter.setPizzaBuilder( hawaiianPizzabuilder );
+        waiter.constructPizza();
+
+        Pizza pizza = waiter.getPizza();
+		
 	}
 
 }
